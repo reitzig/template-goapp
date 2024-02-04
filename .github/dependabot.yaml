@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: "gomod"
+  directory: "/"
+  allow:
+  - dependency-type: "all"
+  schedule:
+    interval: "weekly"
+  groups:
+    dev-non-major:
+      dependency-type: development
+      update-types:
+      - patch
+      - minor
+    patch:
+      dependency-type: production
+      update-types:
+      - patch
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "weekly"

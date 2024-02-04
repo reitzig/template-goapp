@@ -1,0 +1,17 @@
+rc: .config/lefthook.rc
+
+pre-commit:
+  piped: true
+  commands:
+    1_formatter:
+      glob: "*.go"
+      run: go fmt ./...
+      stage_fixed: true
+    2_editorconfig:
+      exclude: '(^.idea/)|(\.(lock|go)$|(^go\.))'
+      run: editorconfig-checker {staged_files}
+post-checkout:
+  commands:
+    update_deps_go:
+      glob: go.*
+      run: go mod tidy
