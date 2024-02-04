@@ -22,6 +22,7 @@ jobs:
         file-pattern: |
           .changes/unreleased/*.yaml
           CHANGELOG.md
+        skip-label: "no changelog"
         failure-message: |
           Missing a new changelog entry.
           Please add one with `changie new`, or
