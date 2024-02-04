@@ -31,10 +31,12 @@ jobs:
         args: --version
 
     - name: Assemble release notes
+      id: release_notes
       run: |
           changie batch auto
           changie merge
           git status
+          echo "version=$(changie latest)" >> "$GITHUB_OUTPUT"
 
     - name: Commit changelog
       run: |
@@ -45,7 +47,11 @@ jobs:
           git commit --all -m "chore(doc): CHANGELOG for $(changie latest)"
           git push origin
 
-    - name: Create tag
-      run: |
-          git tag "$(changie latest)"
-          git push origin "$(changie latest)"
+    - name: Run GoReleaser
+      uses: goreleaser/goreleaser-action@v5.0.0
+      with:
+        version: latest
+        args: --clean --release-notes=.changes/${{ steps.release_notes.outputs.version }}.md --verbose --skip=validate
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GORELEASER_CURRENT_TAG: "${{ steps.release_notes.outputs.version }}"

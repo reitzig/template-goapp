@@ -19,7 +19,8 @@ archives:
 - format: binary
 
 changelog:
-  disable: false
+  # disable: false # TODO: switch with goreleaser >=1.24
+  skip: false
 
 release:
   draft: true
