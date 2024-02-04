@@ -23,6 +23,7 @@ jobs:
           .changes/unreleased/*.yaml
           CHANGELOG.md
         skip-label: "no changelog"
+        token: "${{ secrets.GITHUB_TOKEN }}"
         failure-message: |
           Missing a new changelog entry.
           Please add one with `changie new`, or
