@@ -26,17 +26,26 @@ jobs:
           Please add one with `changie new`, or
           apply label '${skip-label}' label to the pull request."
 
-    - name: Test release note assembly
+    - uses: jdx/mise-action@v2
+      with:
+        install: false # we only need env
+
+    # Workaround for https://github.com/jdx/mise-action/issues/36
+    - name: Load mise env
+      run: |
+          mise env -s bash \
+              | grep -v 'export PATH=' \
+              | cut -d' ' -f2 \
+              >> "$GITHUB_ENV"
+
+    - name: Install changie
       uses: miniscruff/changie-action@v2
       with:
-        args: batch auto
+        args: --version
 
     - name: Test changelog assembly
-      uses: miniscruff/changie-action@v2
-      with:
-        args: merge
-
-    - name: Test computation of next version
-      uses: miniscruff/changie-action@v2
-      with:
-        args: next auto
+      run: |
+        changie next auto
+        changie batch auto
+        changie merge
+        changie latest
