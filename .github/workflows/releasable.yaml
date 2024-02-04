@@ -11,7 +11,7 @@ on:
 jobs:
   releasability:
     runs-on: 'ubuntu-latest'
-    if: contains(github.event.pull_request.labels.*.name, 'no changelog')
+    if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
     steps:
     - uses: actions/checkout@v4
 
