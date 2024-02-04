@@ -11,7 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    #- uses: jdx/mise-action@v2
     # TODO: test again?
 
     - name: Run GoReleaser
