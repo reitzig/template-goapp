@@ -6,10 +6,12 @@ on:
     - opened
     - synchronize
     - reopened
+    - unlabeled
 
 jobs:
   releasability:
     runs-on: 'ubuntu-latest'
+    if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
     steps:
     - uses: actions/checkout@v4
 
@@ -20,7 +22,8 @@ jobs:
         file-pattern: |
           .changes/unreleased/*.yaml
           CHANGELOG.md
-        skip-label: "skip changelog"
+        skip-label: "no changelog"
+        token: "${{ secrets.GITHUB_TOKEN }}"
         failure-message: |
           Missing a new changelog entry.
           Please add one with `changie new`, or
