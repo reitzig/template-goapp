@@ -7,7 +7,9 @@
 
 # Template: Go application
 
-How I set up my go apps. 
+Just how I set up my go apps,
+which I most certainly do not claim to be best practice or anything.
+Comments welcome!
 
 ## Features
 
@@ -21,5 +23,26 @@ How I set up my go apps.
   for changelogs
 - [goreleaser/goreleaser](https://github.com/goreleaser/goreleaser)
   for release assembly
-- GitHub Actions for CI/CD
+- GitHub Actions for testing and releasing
+- Dependabot config for golang and GitHub Actions
 
+### Limitations
+
+- [Trigger Release](.github/workflows/trigger-release.yaml)
+  creates a release draft without a tag;
+  _publishing_ the draft will create the tag on `main` 
+  -- don't wait around!
+
+### TODO
+
+- include a test with coverage
+- set up logging
+- stub for cobra + viper
+
+## Instantiating the template
+
+- Install mise, changie, lefthook, editorconfig-checker
+- "Use this template" from GitHub web UI
+- `rm .changes/unreleased/* .changes/v*.md && changie merge`
+- Replace all occurrences of `[reitzig/]template-goapp` with `[your-account/]your-repo`
+- Rewrite README, replace LICENSE

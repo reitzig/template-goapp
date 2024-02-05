@@ -16,6 +16,7 @@ ij_wrap_on_typing = false
 
 [*.md]
 trim_trailing_whitespace = false
+indent_size = 2
 
 [*.feature]
 indent_size = 2
