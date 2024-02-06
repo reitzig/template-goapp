@@ -13,6 +13,11 @@ Comments welcome!
 
 ## Features
 
+* [spf13/cobra](https://github.com/spf13/cobra)
+  for implementing the command-line interface
+
+### Tooling 
+
 - [jdx/mise](https://github.com/jdx/mise)
   for managing tools and environment variables
 - [.editorconfig](https://editorconfig.org/)
