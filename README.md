@@ -17,6 +17,8 @@ Comments welcome!
   for managing tools and environment variables
 - [.editorconfig](https://editorconfig.org/)
   for sane collaboration
+- [cocogitto/cocogitto](https://github.com/cocogitto/cocogitto)
+  for maintaining an orderly Git history
 - [evilmartians/lefthook](https://github.com/evilmartians/lefthook)
   for pre-commit hooks
 - [miniscruff/changie](https://github.com/miniscruff/changie)
@@ -43,7 +45,7 @@ Comments welcome!
 
 ## Instantiating the template
 
-- Install mise, changie, lefthook, editorconfig-checker
+- Install mise, changie, cocogitto, lefthook, editorconfig-checker
 - "Use this template" from GitHub web UI
 - Run `lefthook install`
 - `rm .changes/unreleased/* .changes/v*.md && changie merge`
