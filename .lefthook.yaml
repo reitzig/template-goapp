@@ -10,6 +10,10 @@ pre-commit:
     2_editorconfig:
       exclude: '(^.idea/)|(\.(lock|go)$|(^go\.))'
       run: editorconfig-checker {staged_files}
+commit-msg:
+  commands:
+    cog:
+      run: cog verify --file {1}
 post-checkout:
   commands:
     update_deps_go:
