@@ -11,13 +11,18 @@ on:
 jobs:
   releasability:
     runs-on: 'ubuntu-latest'
-    if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
     steps:
     - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }} # here, we're not interested in the merge commit
 
-    # Kudos: https://github.com/miniscruff/changie/blob/76fdd65ab31047fd6d506f800a6293f3b2a1ead0/.github/workflows/changelog-check.yml
+    - name: Conventional commits check
+      uses: oknozor/cocogitto-action@v3
+
+    # Kudos: https://github.com/miniscruff/changie/blob/76fdd65ab31047fd6d506f800a6293f3b2a1ead0/.github/workflows/changelog-check.yml # editorconfig-checker-disable-line
     - name: "Check for changelog entries"
       uses: brettcannon/check-for-changed-files@v1.2.0
+      if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
       with:
         file-pattern: |
           .changes/unreleased/*.yaml
@@ -47,6 +52,7 @@ jobs:
         args: --version
 
     - name: Test changelog assembly
+      if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
       run: |
         changie next auto
         changie batch auto
