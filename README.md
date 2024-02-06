@@ -35,14 +35,17 @@ Comments welcome!
 
 ### TODO
 
-- include a test with coverage
 - set up logging
-- stub for cobra + viper
+- include a unit test with coverage
+- include an end-to-end test with coverage
+- stub for viper
+- CI: run tests before releasing
 
 ## Instantiating the template
 
 - Install mise, changie, lefthook, editorconfig-checker
 - "Use this template" from GitHub web UI
+- Run `lefthook install`
 - `rm .changes/unreleased/* .changes/v*.md && changie merge`
 - Replace all occurrences of `[reitzig/]template-goapp` with `[your-account/]your-repo`
 - Rewrite README, replace LICENSE
