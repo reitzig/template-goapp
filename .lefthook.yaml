@@ -3,11 +3,19 @@ rc: .config/lefthook.rc
 pre-commit:
   piped: true
   commands:
-    1_formatter:
+    formatter:
+      priority: 1
       glob: "*.go"
       run: go fmt ./...
       stage_fixed: true
-    2_editorconfig:
+    vet:
+      priority: 1
+      glob: "*.go"
+      # NB: go vet takes only files from a single directory
+      #     s.a. https://github.com/evilmartians/lefthook/discussions/631
+      run: for f in {staged_files}; do go vet "${f}"; done
+    editorconfig:
+      priority: 2
       exclude: '(^.idea/)|(\.(lock|go)$|(^go\.))'
       run: editorconfig-checker {staged_files}
 commit-msg:

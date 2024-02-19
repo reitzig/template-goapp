@@ -3,6 +3,7 @@
 [![release](https://img.shields.io/github/release/reitzig/template-goapp.svg)](https://github.com/reitzig/template-goapp/releases/latest)
 [![GitHub release date](https://img.shields.io/github/release-date/reitzig/template-goapp.svg)](https://github.com/reitzig/template-goapp/releases)
 [![Tests](https://github.com/reitzig/template-goapp/actions/workflows/test.yaml/badge.svg)](https://github.com/reitzig/template-goapp/actions/workflows/test.yaml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/reitzig/template-goapp)](https://goreportcard.com/report/github.com/reitzig/template-goapp)
 <!-- editorconfig-checker-enable -->
 
 # Template: Go application
@@ -51,8 +52,9 @@ Comments welcome!
 ## Instantiating the template
 
 - Install mise, changie, cocogitto, lefthook, editorconfig-checker
-- "Use this template" from GitHub web UI
+  <!-- TODO: Tool for that? -->
+- "Use this template" from GitHub web UI and clone
 - Run `lefthook install`
 - `rm .changes/unreleased/* .changes/v*.md && changie merge`
-- Replace all occurrences of `[reitzig/]template-goapp` with `[your-account/]your-repo`
+- Replace all occurrences of `[reitzig/]template-goapp` with `[your-account/]your-app`
 - Rewrite README, replace LICENSE

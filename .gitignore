@@ -21,7 +21,8 @@
 go.work
 
 # Generated
-dist/
+/dist/
+/vendor
 /template-goapp
 
 # IDE
