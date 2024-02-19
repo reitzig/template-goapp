@@ -16,6 +16,27 @@ Comments welcome!
 
 * [spf13/cobra](https://github.com/spf13/cobra)
   for implementing the command-line interface
+* Acceptance tests with Cucumber
+
+### Testing
+
+- We include a [test workflow](.github/workflows/test.yaml) that
+  runs unit and acceptance tests with coverage.
+- Run unit tests through `go test`, as per usual.
+- Run acceptance tests through [test/Dockerfile](test/Dockerfile);
+  a run configuration for IDEA/GoLand is 
+  [included](.run/Run%20Acceptance%20Tests.run.xml).
+- Run acceptance tests with coverage like so:
+  ```bash
+  docker rm template-goapp-test
+  rm -f test/coverage/*
+  
+  docker build -f test/Dockerfile -t template-goapp-test . \
+    && docker run -it --name template-goapp-test template-goapp-test \
+    && docker cp template-goapp-test:/home/test/app/coverage test/
+  go tool covdata percent -i=test/coverage
+  ```
+  <!-- TODO: Is there a nicer way? -->
 
 ### Tooling 
 
@@ -44,7 +65,6 @@ Comments welcome!
 ### TODO
 
 - set up logging
-- include an end-to-end test with coverage
 - stub for viper
 - CI: run tests before releasing
 

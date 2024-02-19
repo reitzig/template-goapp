@@ -28,3 +28,54 @@ jobs:
 
       - name: Unit Tests
         run: go test -cover ./...
+
+  acceptance-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+        - 'ubuntu-latest'
+        - 'macos-latest'
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: jdx/mise-action@v2
+
+    - name: Prepare runnable binary
+      run: |
+        mkdir bin
+        echo "${GITHUB_WORKSPACE}/bin" >> "${GITHUB_PATH}"
+
+    #- name: Build binary
+    #  uses: goreleaser/goreleaser-action@v5.0.0
+    #  with:
+    #    args: build --clean --snapshot --single-target --output bin/template-goapp
+    #    # TODO: enable coverage
+    #  env:
+    #    # Fix version to match the one expected in tests:
+    #    GORELEASER_CURRENT_TAG: v1.2.3
+
+    - name: Build binary
+      run: |
+        go build \
+          -cover \
+          -ldflags "-s -w -X main.version=1.2.3" \
+          -o bin/template-goapp
+      env:
+        CGO_ENABLED: 0
+
+    - name: Install Test Dependencies
+      working-directory: test
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Run tests
+      working-directory: test
+      run: |
+        mkdir "${GOCOVERDIR}"
+        bundle exec cucumber --publish-quiet --tags 'not @pending'
+        go tool covdata percent -i="${GOCOVERDIR}"
+      env:
+        GOCOVERDIR: /tmp/coverage
+      # TODO: Report coverage so that it's visible on PRs
