@@ -3,6 +3,7 @@ package hello
 import (
 	"github.com/reitzig/template-goapp/internal"
 	"github.com/spf13/cobra"
+	"log"
 )
 
 var (
@@ -19,6 +20,6 @@ var Cmd = &cobra.Command{
 	Long:  `say hello to the world, or a friend!`,
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		internal.Hello(dear, args[0])
+		log.Println(internal.Hello(dear, args[0]))
 	},
 }

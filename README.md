@@ -44,7 +44,6 @@ Comments welcome!
 ### TODO
 
 - set up logging
-- include a unit test with coverage
 - include an end-to-end test with coverage
 - stub for viper
 - CI: run tests before releasing
