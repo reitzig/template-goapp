@@ -1,5 +1,7 @@
 [env]
+BUNDLE_APP_CONFIG = "{{- config_root -}}/bundle"
 CHANGIE_CONFIG_PATH = "{{- config_root -}}/changie.yaml"
 
 [tools]
 go = '1.22'
+ruby = '3.3'

@@ -8,16 +8,21 @@ pre-commit:
       glob: "*.go"
       run: go fmt ./...
       stage_fixed: true
-    vet:
+    editorconfig:
       priority: 1
+      exclude: '(^.run/)|(\.(lock|go)$|(^go\.))'
+      run: editorconfig-checker {staged_files}
+    vet:
+      priority: 2
       glob: "*.go"
       # NB: go vet takes only files from a single directory
       #     s.a. https://github.com/evilmartians/lefthook/discussions/631
       run: for f in {staged_files}; do go vet "./$(dirname "${f}")"; done
-    editorconfig:
+    linter:
       priority: 2
-      exclude: '(^.idea/)|(\.(lock|go)$|(^go\.))'
-      run: editorconfig-checker {staged_files}
+      root: test
+      glob: "*.rb"
+      run: bundle exec rubocop {staged_files}
 commit-msg:
   commands:
     cog:
@@ -27,3 +32,7 @@ post-checkout:
     update_deps_go:
       glob: go.*
       run: go mod tidy
+    update_deps_ruby:
+      root: test
+      glob: "Gemfile.lock"
+      run: bundle install
