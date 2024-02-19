@@ -2,4 +2,4 @@
 CHANGIE_CONFIG_PATH = "{{- config_root -}}/changie.yaml"
 
 [tools]
-go = '1.21'
+go = '1.22'
