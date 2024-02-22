@@ -6,6 +6,8 @@ updates:
   - dependency-type: "all"
   schedule:
     interval: "weekly"
+  labels:
+  - "no changelog"
   groups:
     dev-non-major:
       dependency-type: development
@@ -20,12 +22,16 @@ updates:
   directory: "/"
   schedule:
     interval: "weekly"
+  labels:
+  - "no changelog"
 - package-ecosystem: "bundler"
   directory: "test"
   allow:
   - dependency-type: "all"
   schedule:
     interval: "weekly"
+  labels:
+  - "no changelog"
   groups:
     # TODO: Can't we merge the two groups?
     test-dev-non-major:
