@@ -22,17 +22,15 @@ jobs:
     # Kudos: https://github.com/miniscruff/changie/blob/76fdd65ab31047fd6d506f800a6293f3b2a1ead0/.github/workflows/changelog-check.yml # editorconfig-checker-disable-line
     - name: "Check for changelog entries"
       uses: brettcannon/check-for-changed-files@v1.2.0
-      if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
       with:
         file-pattern: |
           .changes/unreleased/*.yaml
-          CHANGELOG.md
         skip-label: "no changelog"
         token: "${{ secrets.GITHUB_TOKEN }}"
         failure-message: |
           Missing a new changelog entry.
           Please add one with `changie new`, or
-          apply label '${skip-label}' label to the pull request."
+          apply label '${skip-label}' to the pull request."
 
     - uses: jdx/mise-action@v2
       with:
@@ -52,7 +50,6 @@ jobs:
         args: --version
 
     - name: Test changelog assembly
-      if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
       run: |
         changie next auto
         changie batch auto
