@@ -3,7 +3,7 @@ rc: .config/lefthook.rc
 pre-commit:
   piped: true
   commands:
-    formatter:
+    format_go:
       priority: 1
       glob: "*.go"
       run: go fmt ./...
@@ -12,13 +12,13 @@ pre-commit:
       priority: 1
       exclude: '(^.run/)|(\.(lock|go)$|(^go\.))'
       run: editorconfig-checker {staged_files}
-    vet:
+    lint_go:
       priority: 2
       glob: "*.go"
-      # NB: go vet takes only files from a single directory
+      # NB: go linter takes only files from a single directory
       #     s.a. https://github.com/evilmartians/lefthook/discussions/631
-      run: for f in {staged_files}; do go vet "./$(dirname "${f}")"; done
-    linter:
+      run: for f in {staged_files}; do golangci-lint run "./$(dirname "${f}")"; done
+    lint_ruby:
       priority: 2
       root: test
       glob: "*.rb"

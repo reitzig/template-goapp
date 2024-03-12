@@ -19,7 +19,7 @@ var Cmd = &cobra.Command{
 	Short: "say hello to the world",
 	Long:  `say hello to the world, or a friend!`,
 	Args:  cobra.ExactArgs(1),
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		log.Println(internal.Hello(dear, args[0]))
 	},
 }

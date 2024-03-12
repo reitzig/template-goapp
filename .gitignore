@@ -22,6 +22,7 @@ go.work
 
 # Generated
 /dist/
+/test/dist/
 vendor
 /template-goapp
 /test/coverage/

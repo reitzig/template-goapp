@@ -1,0 +1,17 @@
+[run]
+show-stats = true
+
+[linters]
+enable = [
+    "revive",
+]
+
+[[issues.exclude-rules]]
+linters = [
+    "revive"
+]
+text = "if block ends with a return statement"
+
+
+[output]
+sort-results = true
