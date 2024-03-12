@@ -21,7 +21,7 @@ func TestHello(t *testing.T) {
 		{name: "impolite", args: args{dear: false, hailee: "Stuart"}, expected: "Hello, Stuart!"},
 	}
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
+		t.Run(tt.name, func(_ *testing.T) {
 			assertThat.Equal(tt.expected, Hello(tt.args.dear, tt.args.hailee))
 		})
 	}

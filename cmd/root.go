@@ -20,7 +20,7 @@ var Cmd = &cobra.Command{
 	Use:   "template-goapp",
 	Short: "a stub",
 	Long:  `a stub app to try out some stuff`,
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(cmd *cobra.Command, _ []string) {
 		_ = cmd.Help()
 		os.Exit(1)
 	},
