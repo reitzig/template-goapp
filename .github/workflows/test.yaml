@@ -2,11 +2,15 @@ name: Tests
 
 on:
   push:
+    branches:
+    - main
+    tags:
+    - 'v*'
   pull_request:
     types:
-      - opened
-      - synchronize
-      - reopened
+    - opened
+    - synchronize
+    - reopened
 
 jobs:
   lint:
@@ -24,12 +28,12 @@ jobs:
   test:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - uses: jdx/mise-action@v2
+    - uses: jdx/mise-action@v2
 
-      - name: Unit Tests
-        run: go test -cover ./...
+    - name: Unit Tests
+      run: go test -cover ./...
 
   acceptance-test:
     runs-on: ${{ matrix.os }}
