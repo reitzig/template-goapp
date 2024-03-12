@@ -43,17 +43,21 @@ Comments welcome!
 - [jdx/mise](https://github.com/jdx/mise)
   for managing tools and environment variables
 - [.editorconfig](https://editorconfig.org/)
-  for sane collaboration
+  for consistent formatting
+- [golangci/golangci-lint](https://github.com/golangci/golangci-lint)
+  for maintaining orderly Go code
+- [rubocop/rubocop](https://github.com/rubocop/rubocop)
+  for maintaining orderly Ruby code
 - [cocogitto/cocogitto](https://github.com/cocogitto/cocogitto)
   for maintaining an orderly Git history
 - [evilmartians/lefthook](https://github.com/evilmartians/lefthook)
   for pre-commit hooks
 - [miniscruff/changie](https://github.com/miniscruff/changie)
-  for changelogs
+  for creating changelogs
 - [goreleaser/goreleaser](https://github.com/goreleaser/goreleaser)
   for release assembly
 - GitHub Actions for testing and releasing
-- Dependabot config for golang and GitHub Actions
+- Dependabot for keeping dependencies up to date
 
 ### Limitations
 
