@@ -23,7 +23,7 @@ Comments welcome!
 
 Things I want to include, but haven't gotten around to yet:
 
-- Go: set up logging
+- Go: set up (pretty vs debug) logging
 - Go: reading config files with [spf13/viper](https://github.com/spf13/viper)
 - CI: run tests before releasing
 - CI: `test/Dockerfile` should use versions from mise config
