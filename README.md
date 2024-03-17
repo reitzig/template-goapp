@@ -68,8 +68,8 @@ Comments welcome!
 
 ### TODO
 
-- set up logging
-- stub for viper
+- UX: stub for viper
+- UX: set up (pretty vs debug) logging
 - CI: run tests before releasing
 
 ## Instantiating the template

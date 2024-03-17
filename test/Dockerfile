@@ -42,6 +42,10 @@ COPY --from=build /app/template-goapp /bin/
 RUN mkdir "$TEST_HOME/app/coverage"
 ENV GOCOVERDIR=$TEST_HOME/app/coverage
 
+# Signal we're safely running in a container;
+# we abort the tests to avoid breaking the host system!
+ENV RUNNING_IN_CONTAINER=yessir
+
 # Run tests
 COPY --chown=test:test test ./
 ARG verbose=false
