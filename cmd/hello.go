@@ -1,4 +1,4 @@
-package hello
+package cmd
 
 import (
 	"github.com/reitzig/template-goapp/internal"
@@ -7,11 +7,11 @@ import (
 )
 
 var (
-	dear bool
+	helloConfig = internal.HelloConfig{}
 )
 
 func init() {
-	Cmd.Flags().BoolVar(&dear, "dear", false, "say hello to a friend")
+	Cmd.Flags().BoolVar(&helloConfig.Dear.Value, "dear", false, "say hello to a friend")
 }
 
 var Cmd = &cobra.Command{
@@ -20,6 +20,6 @@ var Cmd = &cobra.Command{
 	Long:  `say hello to the world, or a friend!`,
 	Args:  cobra.ExactArgs(1),
 	Run: func(_ *cobra.Command, args []string) {
-		log.Println(internal.Hello(dear, args[0]))
+		log.Println(internal.Hello(helloConfig, args[0]))
 	},
 }

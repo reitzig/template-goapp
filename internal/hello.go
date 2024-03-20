@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-func Hello(dear bool, hailee string) string {
-	if dear {
+func Hello(config HelloConfig, hailee string) string {
+	if config.Dear.Value {
 		return fmt.Sprintf("Hello, dear %s!", hailee)
 	} else {
 		return fmt.Sprintf("Hello, %s!", hailee)

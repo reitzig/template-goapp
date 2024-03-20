@@ -1,22 +1,25 @@
 package cmd
 
 import (
-	"github.com/reitzig/template-goapp/cmd/hello"
+	"github.com/reitzig/template-goapp/internal"
 	"github.com/spf13/cobra"
 	"os"
 )
 
 var (
-	Debug bool
+	config internal.RootConfig = internal.RootConfig{
+		Hello: helloConfig,
+	}
 )
 
 func init() {
-	Cmd.PersistentFlags().BoolVar(&Debug, "debug", false, "debug output")
+	RootCmd.PersistentFlags().BoolVar(&config.Debug.Value, "debug", false, "debug output")
 
-	Cmd.AddCommand(hello.Cmd)
+	RootCmd.AddCommand(infoCmd)
+	RootCmd.AddCommand(Cmd)
 }
 
-var Cmd = &cobra.Command{
+var RootCmd = &cobra.Command{
 	Use:   "template-goapp",
 	Short: "a stub",
 	Long:  `a stub app to try out some stuff`,

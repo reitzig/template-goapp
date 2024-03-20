@@ -22,7 +22,8 @@ func TestHello(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(_ *testing.T) {
-			assertThat.Equal(tt.expected, Hello(tt.args.dear, tt.args.hailee))
+			config := HelloConfig{Dear: ConfigValue[bool]{Source: "test", Value: tt.args.dear}}
+			assertThat.Equal(tt.expected, Hello(config, tt.args.hailee))
 		})
 	}
 }
