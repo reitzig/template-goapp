@@ -2,7 +2,7 @@ module github.com/reitzig/template-goapp
 
 go 1.22
 
-require github.com/spf13/cobra v1.8.0
+require github.com/spf13/cobra v1.8.1
 
 require github.com/stretchr/testify v1.9.0
 
