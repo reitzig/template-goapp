@@ -48,7 +48,7 @@ jobs:
           git push origin
 
     - name: Run GoReleaser
-      uses: goreleaser/goreleaser-action@v5.1.0
+      uses: goreleaser/goreleaser-action@v6.0.0
       with:
         version: latest
         args: --clean --release-notes=.changes/${{ steps.release_notes.outputs.version }}.md --verbose --skip=validate
