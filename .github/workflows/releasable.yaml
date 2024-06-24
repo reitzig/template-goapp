@@ -21,7 +21,7 @@ jobs:
 
     # Kudos: https://github.com/miniscruff/changie/blob/76fdd65ab31047fd6d506f800a6293f3b2a1ead0/.github/workflows/changelog-check.yml # editorconfig-checker-disable-line
     - name: "Check for changelog entries"
-      uses: brettcannon/check-for-changed-files@v1.2.0
+      uses: brettcannon/check-for-changed-files@v1.2.1
       with:
         file-pattern: |
           .changes/unreleased/*.yaml
