@@ -77,7 +77,7 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.31.3)
       parser (>= 3.3.1.0)
-    rubocop-rspec (3.0.1)
+    rubocop-rspec (3.0.2)
       rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     strscan (3.1.0)
@@ -94,7 +94,7 @@ DEPENDENCIES
   cucumber (= 9.2.0)
   rspec (= 3.13.0)
   rubocop (= 1.64.1)
-  rubocop-rspec (= 3.0.1)
+  rubocop-rspec (= 3.0.2)
 
 BUNDLED WITH
    2.5.3
