@@ -8,6 +8,9 @@ updates:
     interval: "weekly"
   labels:
   - "no changelog"
+  commit-message:
+    prefix: "chore"
+    include: "scope"
   groups:
     dev-non-major:
       dependency-type: development
@@ -24,6 +27,9 @@ updates:
     interval: "weekly"
   labels:
   - "no changelog"
+  commit-message:
+    prefix: "chore"
+    include: "scope"
 - package-ecosystem: "bundler"
   directory: "test"
   allow:
@@ -32,6 +38,9 @@ updates:
     interval: "weekly"
   labels:
   - "no changelog"
+  commit-message:
+    prefix: "chore"
+    include: "scope"
   groups:
     # TODO: Can't we merge the two groups?
     test-dev-non-major:
