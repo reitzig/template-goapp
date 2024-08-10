@@ -26,7 +26,8 @@ pre-commit:
 commit-msg:
   commands:
     cog:
-      run: cog verify --file {1}
+      # cf. https://github.com/evilmartians/lefthook/issues/780
+      run: sh -c "if grep -qv '^fixup!' {1}; then cog verify --file {1}; fi"
 post-checkout:
   commands:
     update_deps_go:
