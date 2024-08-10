@@ -1,0 +1,3 @@
+kind: Fixed
+body: Run tests on Renovate branches to enable automerge without PRs
+time: 2024-08-10T20:36:14.095926742+02:00
