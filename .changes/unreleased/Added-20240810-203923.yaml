@@ -1,0 +1,3 @@
+kind: Added
+body: Skip commit-msg hooks on WIP branches
+time: 2024-08-10T20:39:23.453628636+02:00

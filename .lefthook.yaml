@@ -24,6 +24,8 @@ pre-commit:
       glob: "*.rb"
       run: bundle exec rubocop {staged_files}
 commit-msg:
+  skip:
+    - ref: "wip/*"
   commands:
     cog:
       # cf. https://github.com/evilmartians/lefthook/issues/780
