@@ -1,6 +1,3 @@
-[run]
-show-stats = true
-
 [linters]
 enable = [
     "revive",
@@ -14,4 +11,5 @@ text = "if block ends with a return statement"
 
 
 [output]
+show-stats = true
 sort-results = true
