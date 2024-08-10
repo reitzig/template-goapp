@@ -1,0 +1,18 @@
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+# checksum:
+#   enabled: true
+#   require_checksum: true
+#   supported_envs:
+#   - all
+registries:
+- type: standard
+  ref: v4.212.0 # renovate: depName=aquaproj/aqua-registry
+packages:
+- name: cocogitto/cocogitto@6.1.0
+- name: editorconfig-checker/editorconfig-checker@v3.0.3
+- name: evilmartians/lefthook@v1.7.12
+- name: golangci/golangci-lint@v1.59.1
+- name: goreleaser/goreleaser@v1.26.2
+- name: miniscruff/changie@v1.19.1

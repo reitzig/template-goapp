@@ -4,6 +4,7 @@
 [![GitHub release date](https://img.shields.io/github/release-date/reitzig/template-goapp.svg)](https://github.com/reitzig/template-goapp/releases)
 [![Tests](https://github.com/reitzig/template-goapp/actions/workflows/test.yaml/badge.svg)](https://github.com/reitzig/template-goapp/actions/workflows/test.yaml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/reitzig/template-goapp)](https://goreportcard.com/report/github.com/reitzig/template-goapp)
+[![GoApp Template](https://img.shields.io/badge/Template-main-blue)](https://github.com/reitzig/template-goapp/)
 <!-- editorconfig-checker-enable -->
 
 # Template: Go application
@@ -17,6 +18,17 @@ Comments welcome!
 * [spf13/cobra](https://github.com/spf13/cobra)
   for implementing the command-line interface
 * Acceptance tests with Cucumber
+
+### To Do
+
+Things I want to include, but haven't gotten around to yet:
+
+- Go: set up logging
+- Go: reading config files with [spf13/viper](https://github.com/spf13/viper)
+- CI: run tests before releasing
+- CI: `test/Dockerfile` should use versions from mise config
+
+## Developer Setup
 
 ### Testing
 
@@ -42,6 +54,8 @@ Comments welcome!
 
 - [jdx/mise](https://github.com/jdx/mise)
   for managing tools and environment variables
+- [aquaproj/aqua](https://github.com/aquaproj/aqua)
+  for managing tool dependencies
 - [.editorconfig](https://editorconfig.org/)
   for consistent formatting
 - [golangci/golangci-lint](https://github.com/golangci/golangci-lint)
@@ -58,6 +72,7 @@ Comments welcome!
   for release assembly
 - GitHub Actions for testing and releasing
 - Dependabot for keeping dependencies up to date
+- [GoLand](https://www.jetbrains.com/go/) for the typing
 
 ### Limitations
 
@@ -66,18 +81,15 @@ Comments welcome!
   _publishing_ the draft will create the tag on `main` 
   -- don't wait around!
 
-### TODO
-
-- set up logging
-- stub for viper
-- CI: run tests before releasing
-
 ## Instantiating the template
 
-- Install mise, changie, cocogitto, lefthook, editorconfig-checker
-  <!-- TODO: Tool for that? -->
+- Install aqua and mise
 - "Use this template" from GitHub web UI and clone
-- Run `lefthook install`
+- Run `aqua install` (or install the tools listed above in whichever way pleases you)
+- Run `mise install` (or install matching Go and Ruby in whichever you pleases you)
+- Run `lefthook install` (optional)
 - `rm .changes/unreleased/* .changes/v*.md && changie merge`
 - Replace all occurrences of `[reitzig/]template-goapp` with `[your-account/]your-app`
 - Rewrite README, replace LICENSE
+  - If you want to keep the badge linking to this template <3, 
+    you may also want to replace the linked revision to the one you used.

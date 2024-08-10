@@ -11,7 +11,7 @@ pre-commit:
     editorconfig:
       priority: 1
       exclude: '(^.run/)|(\.(lock|go)$|(^go\.))'
-      run: editorconfig-checker {staged_files}
+      run: ec {staged_files}
     lint_go:
       priority: 2
       glob: "*.go"
