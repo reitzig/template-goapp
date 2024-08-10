@@ -89,6 +89,7 @@ Things I want to include, but haven't gotten around to yet:
 - "Use this template" from GitHub web UI
 - Change some settings on GitHub:
   - Add label `no changelog`
+  - Activate RenovateBot for the new repository ([Docs](https://docs.renovatebot.com/modules/platform/github/))
 - Clone your new repository
 - Run `aqua install` (or install the tools listed above in whichever way pleases you)
 - Run `mise install` (or install matching Go and Ruby in whichever you pleases you)
