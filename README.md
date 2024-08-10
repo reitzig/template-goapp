@@ -71,8 +71,10 @@ Things I want to include, but haven't gotten around to yet:
 - [goreleaser/goreleaser](https://github.com/goreleaser/goreleaser)
   for release assembly
 - GitHub Actions for testing and releasing
-- Dependabot for keeping dependencies up to date
-- [GoLand](https://www.jetbrains.com/go/) for the typing
+- [Renovate](https://github.com/renovatebot/renovate)
+  for keeping dependencies up to date
+- [GoLand](https://www.jetbrains.com/go/)
+  for the typing
 
 ### Limitations
 
@@ -84,7 +86,10 @@ Things I want to include, but haven't gotten around to yet:
 ## Instantiating the template
 
 - Install aqua and mise
-- "Use this template" from GitHub web UI and clone
+- "Use this template" from GitHub web UI
+- Change some settings on GitHub:
+  - Add label `no changelog`
+- Clone your new repository
 - Run `aqua install` (or install the tools listed above in whichever way pleases you)
 - Run `mise install` (or install matching Go and Ruby in whichever you pleases you)
 - Run `lefthook install` (optional)
