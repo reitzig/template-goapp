@@ -6,10 +6,11 @@
   ],
   packageRules: [
     {
-      matchDepTypes: [
+      matchUpdateTypes: [
+        "digest",
+        "lockFileMaintenance",
         "patch",
         "pin",
-        "digest",
         "pinDigest",
       ],
       groupName: "patches",
@@ -20,7 +21,7 @@
       ],
     },
     {
-      matchDepTypes: [
+      matchUpdateTypes: [
         "minor",
         "major",
       ],
