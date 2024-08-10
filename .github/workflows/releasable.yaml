@@ -13,16 +13,16 @@ jobs:
     if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.event.pull_request.head.sha }} # here, we're not interested in the merge commit
 
     - name: Conventional commits check
-      uses: oknozor/cocogitto-action@v3
+      uses: oknozor/cocogitto-action@5ae166018d8265bb2df85c1eb521e86a17b61085 # v3
 
     # Kudos: https://github.com/miniscruff/changie/blob/76fdd65ab31047fd6d506f800a6293f3b2a1ead0/.github/workflows/changelog-check.yml # editorconfig-checker-disable-line
     - name: "Check for changelog entries"
-      uses: brettcannon/check-for-changed-files@v1.2.1
+      uses: brettcannon/check-for-changed-files@871d7b8b5917a4f6f06662e2262e8ffc51dff6d1 # v1.2.1
       with:
         file-pattern: |
           .changes/unreleased/*.yaml
@@ -33,7 +33,7 @@ jobs:
           Please add one with `changie new`, or
           apply label '${skip-label}' to the pull request."
 
-    - uses: jdx/mise-action@v2
+    - uses: jdx/mise-action@d6e32c1796099e0f1f3ac741c220a8b7eae9e5dd # v2
       with:
         install: false # we only need env
 
@@ -46,7 +46,7 @@ jobs:
               >> "$GITHUB_ENV"
 
     - name: Install changie
-      uses: miniscruff/changie-action@v2
+      uses: miniscruff/changie-action@6dcc2533cac0495148ed4046c438487e4dceaa23 # v2
       with:
         args: --version
 
