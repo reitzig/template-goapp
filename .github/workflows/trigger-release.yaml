@@ -9,9 +9,9 @@ jobs:
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
-    - uses: jdx/mise-action@v2
+    - uses: jdx/mise-action@d6e32c1796099e0f1f3ac741c220a8b7eae9e5dd # v2
       with:
         install: false # we only need env
 
@@ -26,7 +26,7 @@ jobs:
             >> "$GITHUB_ENV"
 
     - name: Install changie
-      uses: miniscruff/changie-action@v2
+      uses: miniscruff/changie-action@6dcc2533cac0495148ed4046c438487e4dceaa23 # v2
       with:
         args: --version
 
@@ -48,7 +48,7 @@ jobs:
           git push origin
 
     - name: Run GoReleaser
-      uses: goreleaser/goreleaser-action@v5.1.0
+      uses: goreleaser/goreleaser-action@5742e2a039330cbb23ebf35f046f814d4c6ff811 # v5.1.0
       with:
         version: latest
         args: --clean --release-notes=.changes/${{ steps.release_notes.outputs.version }}.md --verbose --skip=validate
