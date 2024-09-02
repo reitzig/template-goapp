@@ -4,6 +4,10 @@
     "github>aquaproj/aqua-renovate-config#2.3.1",
     "schedule:weekly",
   ],
+  labels: [
+    "dependencies",
+    "no changelog"
+  ],
   packageRules: [
     {
       matchUpdateTypes: [
@@ -16,9 +20,6 @@
       groupName: "patches",
       automerge: true,
       automergeType: "branch",
-      labels: [
-        "no changelog"
-      ],
     },
     {
       matchUpdateTypes: [
