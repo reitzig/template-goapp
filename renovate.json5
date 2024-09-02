@@ -30,5 +30,17 @@
         "before 9am on the first day of the month",
       ],
     },
+    {
+      matchPackageNames: ["aquaproj/aqua-registry"],
+      matchUpdateTypes: [
+        "patch",
+        "minor",
+      ],
+      schedule: [
+        "before 9am on the first day of the week",
+      ],
+      automerge: true,
+      automergeType: "branch",
+    },
   ],
 }
