@@ -4,6 +4,17 @@
     "github>aquaproj/aqua-renovate-config#2.3.1",
     "schedule:weekly",
   ],
+  // Overwrite `:ignoreModulesAndTests` which we inherited via `config:best-practices`.
+  //   cf. https://docs.renovatebot.com/presets-default/#ignoremodulesandtests
+  ignorePaths: [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/examples/**",
+    "**/__tests__/**",
+    "**/tests/**",
+    "**/__fixtures__/**",
+  ],
   labels: [
     "dependencies",
     "no changelog"
