@@ -1,4 +1,4 @@
-FROM golang:1.22 as build
+FROM golang:1.22@sha256:192683db8982323952988c7b86c098ee7ecc6cbeb202bf7c113ff9be5358367c as build
 
 ENV CGO_ENABLED=0
 
@@ -13,7 +13,7 @@ RUN go build \
     -cover \
     -ldflags "-s -w -X main.version=1.2.3"
 
-FROM ruby:3.3 as test
+FROM ruby:3.3@sha256:9ee601015fbb7c610ae02137d5698ab712f821069eaf7c0548e58a5b609970aa as test
 
 # Configure the shell to catch more errors loudly and early
 SHELL ["/bin/bash", \
