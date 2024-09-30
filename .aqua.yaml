@@ -12,7 +12,7 @@ registries:
 packages:
 - name: cocogitto/cocogitto@6.1.0
 - name: editorconfig-checker/editorconfig-checker@v3.0.3
-- name: evilmartians/lefthook@v1.7.15
+- name: evilmartians/lefthook@v1.7.17
 - name: golangci/golangci-lint@v1.59.1
 - name: goreleaser/goreleaser@v1.26.2
 - name: miniscruff/changie@v1.19.1
