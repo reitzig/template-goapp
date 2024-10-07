@@ -22,7 +22,7 @@ jobs:
     - uses: jdx/mise-action@f8dfbcc150159126838e44b882bf34bd98fd90f3 # v2
 
     - name: golangci-lint
-      uses: golangci/golangci-lint-action@aaa42aa0628b4ae2578232a66b541047968fac86 # v6
+      uses: golangci/golangci-lint-action@971e284b6050e8a5849b72094c50ab08da042db8 # v6
       with:
         version: latest
 
