@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-    - uses: jdx/mise-action@a4cfebde9ceb9b49b54db1d148fa86a52e1b7fab # v2
+    - uses: jdx/mise-action@53d027c2e96fed8f955f5d95bff910a3e031cc58 # v2
 
     - name: golangci-lint
       uses: golangci/golangci-lint-action@971e284b6050e8a5849b72094c50ab08da042db8 # v6
@@ -31,7 +31,7 @@ jobs:
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-    - uses: jdx/mise-action@a4cfebde9ceb9b49b54db1d148fa86a52e1b7fab # v2
+    - uses: jdx/mise-action@53d027c2e96fed8f955f5d95bff910a3e031cc58 # v2
 
     - name: Unit Tests
       run: go test -cover ./...
@@ -46,7 +46,7 @@ jobs:
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-    - uses: jdx/mise-action@a4cfebde9ceb9b49b54db1d148fa86a52e1b7fab # v2
+    - uses: jdx/mise-action@53d027c2e96fed8f955f5d95bff910a3e031cc58 # v2
 
     - name: Prepare runnable binary
       run: |
