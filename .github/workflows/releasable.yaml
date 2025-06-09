@@ -18,7 +18,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }} # here, we're not interested in the merge commit
 
     - name: Conventional commits check
-      uses: oknozor/cocogitto-action@f1d28f8e65281597d8209bf233328ddfd4424d10 # v3
+      uses: oknozor/cocogitto-action@c7a74f5406bab86da17da0f0e460a69f8219a68c # v3
 
     # Kudos: https://github.com/miniscruff/changie/blob/76fdd65ab31047fd6d506f800a6293f3b2a1ead0/.github/workflows/changelog-check.yml # editorconfig-checker-disable-line
     - name: "Check for changelog entries"
@@ -33,7 +33,7 @@ jobs:
           Please add one with `changie new`, or
           apply label '${skip-label}' to the pull request."
 
-    - uses: jdx/mise-action@53d027c2e96fed8f955f5d95bff910a3e031cc58 # v2
+    - uses: jdx/mise-action@13abe502c30c1559a5c37dff303831bab82c9402 # v2
       with:
         install: false # we only need env
 

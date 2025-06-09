@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-    - uses: jdx/mise-action@53d027c2e96fed8f955f5d95bff910a3e031cc58 # v2
+    - uses: jdx/mise-action@13abe502c30c1559a5c37dff303831bab82c9402 # v2
       with:
         install: false # we only need env
 
