@@ -1,7 +1,7 @@
 {
   extends: [
     "config:best-practices",
-    "github>aquaproj/aqua-renovate-config#2.8.1",
+    "github>aquaproj/aqua-renovate-config#2.8.2",
     "schedule:weekly",
   ],
   // Overwrite `:ignoreModulesAndTests` which we inherited via `config:best-practices`.
