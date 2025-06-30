@@ -33,7 +33,7 @@ jobs:
           Please add one with `changie new`, or
           apply label '${skip-label}' to the pull request."
 
-    - uses: jdx/mise-action@13abe502c30c1559a5c37dff303831bab82c9402 # v2
+    - uses: jdx/mise-action@5cb1df66ed5e1fb3c670ea0b62fd17a76979826a # v2
       with:
         install: false # we only need env
 
