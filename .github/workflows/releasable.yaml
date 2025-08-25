@@ -37,14 +37,6 @@ jobs:
       with:
         install: false # we only need env
 
-    # Workaround for https://github.com/jdx/mise-action/issues/36
-    - name: Load mise env
-      run: |
-          mise env -s bash \
-              | grep -v 'export PATH=' \
-              | cut -d' ' -f2 \
-              >> "$GITHUB_ENV"
-
     - name: Install changie
       uses: miniscruff/changie-action@6dcc2533cac0495148ed4046c438487e4dceaa23 # v2
       with:
