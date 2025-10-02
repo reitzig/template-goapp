@@ -13,7 +13,7 @@ RUN go build \
     -cover \
     -ldflags "-s -w -X main.version=1.2.3"
 
-FROM ruby:3.3@sha256:45f212d87d7df1f1e7f430ce3b62f987f99a3824f6ef56faa527a28d75db41bb as test
+FROM ruby:3.4@sha256:2de78cfbe28d99ee29c7a6b6d313617619d7fce68ed22337609f31a50cffc407 as test
 
 # Configure the shell to catch more errors loudly and early
 SHELL ["/bin/bash", \
