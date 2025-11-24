@@ -13,7 +13,7 @@ jobs:
     if: ${{ ! contains(github.event.pull_request.labels.*.name, 'no changelog') }}
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
         ref: ${{ github.event.pull_request.head.sha }} # here, we're not interested in the merge commit
 
@@ -33,7 +33,7 @@ jobs:
           Please add one with `changie new`, or
           apply label '${skip-label}' to the pull request."
 
-    - uses: jdx/mise-action@9dc7d5dd454262207dea3ab5a06a3df6afc8ff26 # v3
+    - uses: jdx/mise-action@d16887ba50704baed7de72bd1e82e04391e4457a # v3
       with:
         install: false # we only need env
 

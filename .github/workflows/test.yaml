@@ -17,9 +17,9 @@ jobs:
   lint:
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-    - uses: jdx/mise-action@9dc7d5dd454262207dea3ab5a06a3df6afc8ff26 # v3
+    - uses: jdx/mise-action@d16887ba50704baed7de72bd1e82e04391e4457a # v3
 
     - name: golangci-lint
       uses: golangci/golangci-lint-action@55c2c1448f86e01eaae002a5a3a9624417608d84 # v6
@@ -29,9 +29,9 @@ jobs:
   test:
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-    - uses: jdx/mise-action@9dc7d5dd454262207dea3ab5a06a3df6afc8ff26 # v3
+    - uses: jdx/mise-action@d16887ba50704baed7de72bd1e82e04391e4457a # v3
 
     - name: Unit Tests
       run: go test -cover ./...
@@ -44,9 +44,9 @@ jobs:
         - 'ubuntu-latest'
         - 'macos-latest'
     steps:
-    - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-    - uses: jdx/mise-action@9dc7d5dd454262207dea3ab5a06a3df6afc8ff26 # v3
+    - uses: jdx/mise-action@d16887ba50704baed7de72bd1e82e04391e4457a # v3
 
     - name: Prepare runnable binary
       run: |
